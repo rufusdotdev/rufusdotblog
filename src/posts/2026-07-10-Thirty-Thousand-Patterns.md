@@ -5,13 +5,7 @@ deck: Undisturbed dust looks different from the kind that gets stirred up weekly
 date: 2026-07-10
 ---
 
-
-
-
-
 <!-- # Thirty Thousand Patterns, and Nobody Knows Where Half of Them Are -->
-
-
 
 There's a rack in the back corner of one of our storage buildings that nobody has touched in years. I know because of the dust. Undisturbed dust looks different from the kind that gets stirred up weekly — it settles even, gray, patient. On that rack sits a match plate for a part we haven't run since before I had this job. The tag on the shelf says one location. The database says another. The pattern itself, once I wiped it down, told the truth: nobody has pulled this in over a decade, and somebody is still paying rent on the floor space it occupies.
 

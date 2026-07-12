@@ -5,7 +5,7 @@ deck: You don't need an engineering degree to read one.
 date: 2026-06-26
 ---
 
-# How to Read a Drawing If You Didn't Go to Engineering School
+<!-- # How to Read a Drawing If You Didn't Go to Engineering School -->
 
 A casting drawing looks like a wall of numbers and arrows until you know what each piece is for. Then it stops being a puzzle. It's just a part, described honestly, by someone who wanted to be understood.
 

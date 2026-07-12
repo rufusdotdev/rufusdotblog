@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+---
+<article>
+  <header class="post-header">
+    <p class="post-header__meta">
+      <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+      <span>{{ content | readingTime }} min read</span>
+    </p>
+    <h1 class="post-header__title">{{ title }}</h1>
+    {% if deck %}<p class="post-header__deck">{{ deck }}</p>{% endif %}
+  </header>
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="/">&larr; Back to all posts</a>
+  </footer>
+</article>

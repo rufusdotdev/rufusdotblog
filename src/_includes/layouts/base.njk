@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- Fonts: FK Screamer (display, self-hosted — see /src/fonts/), Poppins (headings/nav), Lora (body), Space Mono (meta/utility) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__row">
+      <p class="masthead__title"><a href="/">{{ site.title }}</a></p>
+      <nav class="masthead__nav" aria-label="Primary">
+        <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Journal</a>
+        <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
+        <a href="{{ site.github }}">Github</a>
+      </nav>
+    </div>
+    <p class="masthead__tagline">{{ site.description }}</p>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="colophon">
+    <span>&copy; {{ currentYear }} {{ site.author }}. Set in FK Screamer, Poppins &amp; Lora.</span>
+    <span>Built with Eleventy.</span>
+  </footer>
+</body>
+</html>

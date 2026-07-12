@@ -1,0 +1,323 @@
+/* ---------------------------------------------------------
+   Design tokens
+   Paper/ink/terracotta editorial system. Type: FK Screamer
+   (hero display, self-hosted), Poppins (structural headings/
+   nav), Lora (body), Space Mono (dates/meta/code) — same
+   pairing as the Architect Press style guide.
+--------------------------------------------------------- */
+:root {
+  --paper: #F2ECDF;
+  --paper-raised: #FBF8F1;
+  --ink: #201D18;
+  --ink-soft: #4A453B;
+  --clay: #B24F2C;       /* terracotta accent, darker/more saturated than the AI-default */
+  --clay-soft: #D98F6C;
+  --olive: #7C7457;      /* muted rule/label color */
+  --rule: #DDD3BE;
+
+  /* Display: big impact headlines only (masthead, hero titles).
+     FK Screamer is not on Google Fonts — self-host the woff2 files
+     and drop them in /src/fonts/ (see @font-face below), otherwise
+     this silently falls back to Poppins. */
+  --font-display: "FK Screamer", "Poppins", sans-serif;
+  --font-heading: "Poppins", -apple-system, "Segoe UI", sans-serif;  /* structural headings, nav, labels */
+  --font-body: "Lora", Georgia, serif;                                /* body copy */
+  --font-mono: "Space Mono", "SFMono-Regular", Consolas, monospace;   /* dates, meta, code */
+
+  --measure: 42rem;
+  --measure-wide: 56rem;
+}
+
+/* FK Screamer is a paid/licensed display face, not on Google Fonts.
+   Drop FKScreamer-Regular.woff2 (and any other weights you own) into
+   /src/fonts/ and this will pick it up; until then --font-display
+   falls back to Poppins. */
+@font-face {
+  font-family: "FK Screamer";
+  src: url("/fonts/FKScreamer-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--clay);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--ink); }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ---------------------------------------------------------
+   Masthead — styled like a printed publication header,
+   ties to the "Architect Press" print metaphor.
+--------------------------------------------------------- */
+.masthead {
+  max-width: var(--measure-wide);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.masthead__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2.25rem;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+.masthead__title a { color: var(--ink); text-decoration: none; }
+
+.masthead__nav {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.masthead__nav a { color: var(--ink-soft); text-decoration: none; }
+.masthead__nav a:hover { color: var(--clay); }
+.masthead__nav a[aria-current="page"] { color: var(--clay); }
+
+.masthead__tagline {
+  margin: 0.4rem 0 0;
+  color: var(--olive);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---------------------------------------------------------
+   Layout shell
+--------------------------------------------------------- */
+main {
+  max-width: var(--measure-wide);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.page-intro {
+  max-width: var(--measure);
+  margin-bottom: 3rem;
+}
+.page-intro h1 {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  margin: 0 0 0.5rem;
+}
+.page-intro p {
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+/* ---------------------------------------------------------
+   Post index — dated list, rule between entries
+--------------------------------------------------------- */
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: var(--measure);
+}
+
+.post-list__item {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.post-list__item:first-child { padding-top: 0; }
+
+.post-list__meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--olive);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  gap: 1rem;
+}
+
+.post-list__title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0.3rem 0 0.4rem;
+}
+.post-list__title a { color: var(--ink); text-decoration: none; }
+.post-list__title a:hover { color: var(--clay); }
+
+.post-list__excerpt {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.empty-note {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--olive);
+  border: 1px dashed var(--rule);
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------
+   Single post
+--------------------------------------------------------- */
+.post-header {
+  max-width: var(--measure);
+  margin-bottom: 2.5rem;
+}
+.post-header__meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--olive);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.post-header__title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+.post-header__deck {
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.post-body {
+  max-width: var(--measure);
+}
+.post-body > p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  float: left;
+  line-height: 0.8;
+  padding: 0.1rem 0.5rem 0 0;
+  color: var(--clay);
+  font-weight: 600;
+}
+
+.post-body h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+.post-body h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.post-body p { margin: 1.1em 0; }
+.post-body blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  border-left: 3px solid var(--clay);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.post-body pre {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--paper-raised);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+.post-body pre code { background: none; padding: 0; }
+.post-body ul, .post-body ol { padding-left: 1.4rem; }
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+.post-body img { border: 1px solid var(--rule); margin: 1.5rem 0; }
+
+.post-footer {
+  max-width: var(--measure);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.post-footer a { color: var(--olive); }
+
+/* ---------------------------------------------------------
+   Colophon footer — the signature element. A printer's
+   colophon marking who made the thing and how.
+--------------------------------------------------------- */
+.colophon {
+  max-width: var(--measure-wide);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--olive);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.colophon a { color: var(--olive); }
+.colophon a:hover { color: var(--clay); }
+
+/* ---------------------------------------------------------
+   Responsive
+--------------------------------------------------------- */
+@media (max-width: 640px) {
+  .masthead__title { font-size: 1.85rem; }
+  .page-intro h1 { font-size: 2.1rem; }
+  .post-header__title { font-size: 2.15rem; }
+  .post-body > p:first-of-type::first-letter { font-size: 2.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}

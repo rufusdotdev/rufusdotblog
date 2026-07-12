@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+title: Journal
+---
+<div class="page-intro">
+  <h1>Journal</h1>
+  <p>{{ site.description }}</p>
+</div>
+
+{% set posts = collections.posts %}
+{% if posts.length %}
+<ul class="post-list">
+  {% for post in posts %}
+  <li class="post-list__item">
+    <p class="post-list__meta">
+      <time datetime="{{ post.data.date | isoDate }}">{{ post.data.date | readableDate }}</time>
+      <span>{{ post.templateContent | readingTime }} min read</span>
+    </p>
+    <h2 class="post-list__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+    {% if post.data.deck %}<p class="post-list__excerpt">{{ post.data.deck }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty-note">No entries yet. Drop a markdown file in /src/posts/ to get started.</p>
+{% endif %}

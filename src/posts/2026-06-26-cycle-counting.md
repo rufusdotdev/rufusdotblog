@@ -1,3 +1,10 @@
+---
+layout: layouts/post.njk
+title: Cycle Counting a Pattern Shop Without Stopping Production
+deck: 
+date: 2026-06-26
+---
+
 <!-- # Cycle Counting a Pattern Shop Without Stopping Production -->
 
 You cannot shut down a pattern shop to count it. Production Control doesn't care that you're mid-audit. They need the 14-inch volute pattern pulled for a Tuesday pour whether or not anyone's laid eyes on it since March. So the idea that you'll ever get a clean, all-hands, everything-frozen physical inventory is a fantasy — one more thing that sounds good in a meeting and dies the second the shop floor hears about it.

@@ -19,7 +19,7 @@
      FK Screamer is not on Google Fonts — self-host the woff2 files
      and drop them in /src/fonts/ (see @font-face below), otherwise
      this silently falls back to Poppins. */
-  --font-display: "FK Screamer", "Poppins", sans-serif;
+  --font-display: "FK Screamer", "Anton", "Poppins", sans-serif;
   --font-heading: "Poppins", -apple-system, "Segoe UI", sans-serif;  /* structural headings, nav, labels */
   --font-body: "Lora", Georgia, serif;                                /* body copy */
   --font-mono: "Space Mono", "SFMono-Regular", Consolas, monospace;   /* dates, meta, code */

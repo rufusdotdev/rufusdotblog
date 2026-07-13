@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: Cycle Counting a Pattern Shop Without Stopping Production
-deck: 
+deck: Production Control doesn't care that you're mid-audit.
 date: 2026-07-24
 ---
 

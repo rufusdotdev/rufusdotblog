@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: How to Read a Drawing If You Didn't Go to Engineering School
 deck: You don't need an engineering degree to read one.
-date: 2026-06-26
+date: 2026-07-02
 ---
 
 <!-- # How to Read a Drawing If You Didn't Go to Engineering School -->

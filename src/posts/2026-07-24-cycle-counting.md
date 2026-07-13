@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: Cycle Counting a Pattern Shop Without Stopping Production
 deck: 
-date: 2026-06-26
+date: 2026-07-24
 ---
 
 <!-- # Cycle Counting a Pattern Shop Without Stopping Production -->

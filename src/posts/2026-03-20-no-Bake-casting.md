@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: No-Bake: Rigidity, On Purpose
+title: "No-Bake: Rigidity, On Purpose"
 deck: 
 date: 2026-03-20
 ---

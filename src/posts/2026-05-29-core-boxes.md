@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: The Core Box: The Pattern's Quiet Counterpart
+title: "The Core Box: The Pattern's Quiet Counterpart"
 deck: 
 date: 2026-05-29
 ---

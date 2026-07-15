@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: Investment Casting: Precision Bought One Wax Part at a Time
+title: "Investment Casting: Precision Bought One Wax Part at a Time"
 deck: 
 date: 2026-04-03
 ---

@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: Green Sand: The Foundry's Workhorse
+title: "Green Sand: The Foundry's Workhorse"
 deck: 
 date: 2026-03-06
 ---

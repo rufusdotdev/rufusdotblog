@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: Shell Cores: Sand That Comes Pre-Loaded
+title: "Shell Cores: Sand That Comes Pre-Loaded"
 deck: 
 date: 2026-05-01
 ---

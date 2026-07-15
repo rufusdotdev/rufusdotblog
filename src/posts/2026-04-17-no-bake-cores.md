@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: The Core: What Makes the Hollow Possible
+title: "The Core: What Makes the Hollow Possible"
 deck: 
 date: 2026-04-17
 ---

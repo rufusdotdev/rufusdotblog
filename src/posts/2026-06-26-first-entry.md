@@ -1,3 +1,4 @@
+<!-- 
 ---
 layout: layouts/post.njk
 title: First entry
@@ -22,3 +23,4 @@ const minutes = Math.max(1, Math.round(words / 200));
 ```
 
 Delete this post once you've got real entries in `/src/posts/`.
+-->
